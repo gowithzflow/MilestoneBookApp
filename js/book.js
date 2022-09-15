@@ -6,26 +6,37 @@ function Book(author, language, subject, title) {
 
   this.render = () => {
     const li = document.createElement("li");
-    li.textContent = this.title;
+    li.textContent = `${this.title} by  ${this.author} Topics: ${this.subject.length}`;
     const fav = document.createElement("button");
 
-    const rmv = 
-        fav.id = "fav-button";
-        fav.textContent = "add favorite";
+    fav.id = "fav-button";
+    const heartPlus = `<span class="material-symbols-outlined">
+    heart_plus
+    </span>` 
+    ;
+    fav.innerHTML = heartPlus;
+    fav.hidden = false;
 
-        const comment = document.createElement("input");
-        comment.type = Text;
-        comment.size = 30;
-        comment.placeholder = "add comment here";
+    const commnt = document.createElement("button");
+    commnt.id = "commBtn";
+    const commntIcon = `<span class="material-symbols-outlined">
+    add_comment
+    </span>`
+    commnt.innerHTML = commntIcon;
 
-        fav.addEventListener('click', function(){
-            fav.textContent = "*";
-            const li = fav.parentElement;
-            li.className = "fav";
-           });
+    const commntInput = document.createElement("input");
+    commntInput.hidden = true;
 
-        li.append(fav);
-        li.append(comment);
+    fav.addEventListener('click', function () {
+      const heart = `<span class="material-symbols-outlined">
+      favorite
+      </span>`;
+      fav.innerHTML = heart;
+      const li = fav.parentElement;
+      li.className = "fav";
+    });
+
+    li.append(fav,commnt, commntInput);    
     return li;
 
   };

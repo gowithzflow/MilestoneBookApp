@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <nav>
-      <input placeholder="Search">
-      <button class="searchBtn">Search</button>
-      <select class="sortBy">
-        <option value="titleaz">Title A-Z</option>
-        <option value="titleza">Title Z-A</option>
-      </select>
-      </select>
-    </nav>
-    <main id="app">
-      <ul class="books"></ul>
-    </main>
 
-    <script src="js/book-data.js"></script>
-    <script src="js/book.js"></script>
-    <script src="js/bookshelf.js"></script>
-    <script src="index.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bookshelf</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+
+<body>
+  <nav>
+    <select class= "searchBy">
+      <option value="title">Title</option>
+      <option value="author">Author</option>
+    </select>
+
+    <input placeholder="Search">
+    <button class="searchBtn">Search</button>
+
+    <select class="sortFrom">
+      <option value="az">A-Z</option>
+      <option value="za">Z-A</option>
+      <option value="topics+">Least Topics</option>
+      <option value="topics-">Most Topics</option>
+    </select>
+    <button class="showFav">View Favorites</button>
+
+  </nav>
+  <main id="app">
+    <ul class="books"></ul>
+  </main>
+
+  <script src="js/book-data.js"></script>
+  <script src="js/book.js"></script>
+  <script src="js/bookshelf.js"></script>
+  <script src="index.js"></script>
+</body>
+
 </html>

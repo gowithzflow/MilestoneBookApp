@@ -31,15 +31,32 @@ render();
 // --------------------------
 
 const searchInput = document.querySelector("nav input");
-const searchBtn = document.querySelector(".searchBtn");
+const searchBy = document.querySelector(".searchBy");
 
-// NOTE: This only searches through the titles of the books!
-searchBtn.addEventListener("click", () => {
-  const query = searchInput.value.toLowerCase();
-  const searchFn = (b) => b.title.toLowerCase().includes(query);
-  bookshelf.filterVisibleBooks(searchFn);
-  render();
-});
+ searchBy.addEventListener("change", () =>{
+  const searchBtn = document.querySelector(".searchBtn");
+  let query = searchInput.value.toLowerCase();
+
+  if (searchBy.value = "title"){
+  searchBtn.addEventListener("click", () => {
+   
+    const searchFn = (b) => b.title.toLowerCase().includes(query);
+    bookshelf.filterVisibleBooks(searchFn);
+    render();  
+    })
+  };
+
+  if(searchBy.value = "author"){
+    searchBtn.addEventListener("click",()=>
+    {
+       // console.log(auth);
+    const searchFn = (b) => b.author.toString().toLowerCase().includes(query);
+    bookshelf.filterVisibleBooks(searchFn);
+    render();
+    })
+  };
+
+  }); 
 
 //#endregion Searching
 
@@ -47,21 +64,33 @@ searchBtn.addEventListener("click", () => {
 //#region Sorting
 // --------------------------
 
-const sortBy = document.querySelector(".sortBy");
+const sortBy = document.querySelector(".sortFrom");
 
-// NOTE: This only sorts by the titles of the books!
 sortBy.addEventListener("change", () => {
   const query = sortBy.value;
   let sortFn;
 
-  if (query === "titleaz") {
+  if (query === "az") {
     sortFn = (a, b) => a.title.localeCompare(b.title);
-  } else if (query === "titleza") {
+  } else if (query === "za") {
     sortFn = (a, b) => b.title.localeCompare(a.title);
+  } else if (query === "topics+") {
+    
+    sortFn = (a, b) => a.subject.length - b.subject.length;
+  } 
+  else if (query === "topics-") {
+    sortFn = (a, b) => b.subject.length - a.subject.length;
   }
 
   bookshelf.sortVisibleBooks(sortFn);
   render();
 });
-
 //#endregion Sorting
+
+// --------------------------
+//#region Comments
+// --------------------------
+
+//select comment button, create event listener for add comment button that sets hidden prop od input field to false, set input capacity max 
+
+//#endregion Comments
