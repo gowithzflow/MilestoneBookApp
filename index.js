@@ -21,7 +21,8 @@ const render = () => {
 
 // Render the first time the page loads
 bookshelf.filterVisibleBooks(() => true);
-bookshelf.sortVisibleBooks((a, b) => a.title.localeCompare(b.title));
+bookshelf.sortVisibleBooks();
+
 render();
 
 //#endregion Initialization
@@ -33,31 +34,31 @@ render();
 const searchInput = document.querySelector("nav input");
 const searchBy = document.querySelector(".searchBy");
 
+ 
+  const searchBtnT = document.querySelector(".searchBtnT");
+  const searchBtnA = document.querySelector(".searchBtnA");
 
- searchBy.addEventListener("change", () =>{
-  const searchBtn = document.querySelector(".searchBtn");
-  let query = searchInput.value.toLowerCase();
+  
 
-  if (searchBy.value = "title"){
-  searchBtn.addEventListener("click", () => {
-   
+  
+  searchBtnT.addEventListener("click", () => {
+    let query = searchInput.value.toLowerCase();
     const searchFn = (b) => b.title.toLowerCase().includes(query);
     bookshelf.filterVisibleBooks(searchFn);
+    
     render();  
     });
-  };
-
-  if(searchBy.value = "author"){
-    searchBtn.addEventListener("click",()=>
+  
+    searchBtnA.addEventListener("click",()=>
     {
-       // console.log(auth);
+      let query = searchInput.value.toLowerCase();
     const searchFn = (b) => b.author.toString().toLowerCase().includes(query);
     bookshelf.filterVisibleBooks(searchFn);
     render();
-    })
-  };
+    });
+  
 
-  });
+
 
 
 

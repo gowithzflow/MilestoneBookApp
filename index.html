@@ -7,18 +7,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bookshelf</title>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
+  
   <nav>
-    <select class= "searchBy">
-      <option value="none"></option>
-      <option value="title">Title</option>
-      <option value="author">Author</option>
-    </select>
-
+    <a href="index.html"><span class="material-symbols-outlined">
+      home
+      </span>Home</a>
+    <a href="profile.html"><span class="material-symbols-outlined">
+      account_box
+      </span>Log In</a>
+    <a href="contact.html"><span class="material-symbols-outlined">
+      contact_support
+      </span>Contact</a>
+  </nav>
+  <nav>
+    <h1>Your Bookshelf</h1>
     <input placeholder="Search" >
-    <button class="searchBtn">Search</button>
+    <button class="searchBtnT">Search Title</button>
+    <button class="searchBtnA">Search Author</button>
+
 
     <select class="sortFrom">
       <option value="az">A-Z</option>

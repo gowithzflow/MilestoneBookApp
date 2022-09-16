@@ -1,0 +1,33 @@
+body{
+    background-color: aquamarine;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    max-width: 100%;
+    align-items: center;
+}
+
+nav{
+  min-width: 100%;
+}
+
+nav a{
+    border: 1px solid aquamarine;
+    padding: 10px;
+    background-color: rgb(44, 159, 184);
+}
+
+.books ul{
+    display: grid;
+    grid-template-areas: "li li li li";
+    column-gap: 5px;
+    row-gap: 5px;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.book{
+    padding: 5px;
+    background-color: rgb(44, 159, 184);
+    
+}
+
+
