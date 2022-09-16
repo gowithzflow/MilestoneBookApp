@@ -1,20 +1,33 @@
 body{
-    background-color: aquamarine;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(177, 177, 177);
+    font-family: 'Cairo', sans-serif;
+    color:black;
     max-width: 100%;
     align-items: center;
+}
+
+button{
+    border-radius: 5px;
 }
 
 nav{
   min-width: 100%;
 }
-
-nav a{
-    border: 1px solid aquamarine;
-    padding: 10px;
-    background-color: rgb(44, 159, 184);
+app{
+    display:inline-block;
 }
-
+nav a{
+    border: 1px solid rgb(225, 225, 225);
+    border-radius: 3px;
+    padding: 10px;
+    background-color: rgb(189, 228, 237);
+}
+body{
+    justify-items: center;
+}
+#app{
+    align-content: justify;
+}
 .books ul{
     display: grid;
     grid-template-areas: "li li li li";
@@ -26,7 +39,7 @@ nav a{
 
 .book{
     padding: 5px;
-    background-color: rgb(44, 159, 184);
+    background-color: rgb(189, 228, 237);
     
 }
 
