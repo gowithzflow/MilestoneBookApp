@@ -33,6 +33,7 @@ render();
 const searchInput = document.querySelector("nav input");
 const searchBy = document.querySelector(".searchBy");
 
+
  searchBy.addEventListener("change", () =>{
   const searchBtn = document.querySelector(".searchBtn");
   let query = searchInput.value.toLowerCase();
@@ -43,7 +44,7 @@ const searchBy = document.querySelector(".searchBy");
     const searchFn = (b) => b.title.toLowerCase().includes(query);
     bookshelf.filterVisibleBooks(searchFn);
     render();  
-    })
+    });
   };
 
   if(searchBy.value = "author"){
@@ -56,7 +57,9 @@ const searchBy = document.querySelector(".searchBy");
     })
   };
 
-  }); 
+  });
+
+
 
 //#endregion Searching
 
@@ -90,6 +93,48 @@ sortBy.addEventListener("change", () => {
 // --------------------------
 //#region Comments
 // --------------------------
+//Manage Books
+
+const manageBooks = document.querySelector(".manageBooks");
+const app = manageBooks.parentElement;
+
+manageBooks.addEventListener("click", () => {
+  const nTitle = document.createElement("input");
+  nTitle.id = "nTitle";
+  nTitle.type = "text";
+
+  //arr input
+  const nAuthor = document.createElement("input");
+  nAuthor.id = "nAuthor";
+  nAuthor.type = "text";
+
+  const nLanguage = document.createElement("input");
+  nLanguage.id = "nTitle";
+  nLanguage.type = "text";
+
+  //arr input
+  const nSubject = document.createElement("input");
+  nSubject.id = "nSubject";
+  nSubject.type = "text";
+
+  const nSubmit = document.createElement("button");
+  nSubmit.id = "nSubmit";
+  const sendIcon = `<span class="material-symbols-outlined">
+      send</span>`;
+      nSubmit.innerHTML = sendIcon;
+
+app.append( nAuthor, nLanguage, nSubject, nTitle, nSubmit); 
+
+nSubmit.addEventListener("click", () => {
+  const nBook = new Book(nAuthor.value, nLanguage.value, nSubject.value, nTitle.value);
+bookshelf.addBook(nBook);
+
+bookshelf.render();
+bookshelf.sortVisibleBooks((a, b) => a.title.localeCompare(b.title));
+render();
+})
+
+});
 
 //select comment button, create event listener for add comment button that sets hidden prop od input field to false, set input capacity max 
 

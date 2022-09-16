@@ -12,11 +12,12 @@
 <body>
   <nav>
     <select class= "searchBy">
+      <option value="none"></option>
       <option value="title">Title</option>
       <option value="author">Author</option>
     </select>
 
-    <input placeholder="Search">
+    <input placeholder="Search" >
     <button class="searchBtn">Search</button>
 
     <select class="sortFrom">
@@ -25,10 +26,12 @@
       <option value="topics+">Least Topics</option>
       <option value="topics-">Most Topics</option>
     </select>
-    <button class="showFav">View Favorites</button>
-
   </nav>
   <main id="app">
+    <div class="manage">
+      <button class="manageBooks">Add Books</button>
+    </div>
+    
     <ul class="books"></ul>
   </main>
 
